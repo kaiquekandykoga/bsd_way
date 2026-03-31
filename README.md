@@ -25,3 +25,4 @@ A list of cloud providers offering BSD systems. Not all providers listed have be
 
 * [GaryH Tech](https://www.youtube.com/@GaryHTech)
 * [RoboNuggie](https://www.youtube.com/@RoboNuggie)
+* [The OpenBSD guy](https://www.youtube.com/@TheOpenBSDguy)
