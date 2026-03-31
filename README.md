@@ -11,6 +11,7 @@ A repository of BSD resources, roadmaps, and other relevant materials, curated b
 
 A list of cloud providers offering BSD systems. Not all providers listed have been personally tested.
 
+* [AWS Lightsail](https://aws.amazon.com/lightsail) → FreeBSD 15.0, 14.3, and 13.5 (verified on 31 March 2026)
 * [Hawk Host](https://www.hawkhost.com) → FreeBSD 14 and 13 (verified on 31 March 2026)
 * [Server Space](https://serverspace.io) → FreeBSD 14 (verified on 31 March 2026)
 * [Vultr](https://www.vultr.com) → FreeBSD 15, 14, and 13, as well as OpenBSD 7.8 and 7.7 (verified on 31 March 2026)
