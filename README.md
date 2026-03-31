@@ -13,11 +13,11 @@ A list of cloud providers offering BSD systems. Not all providers listed have be
 ## Operating Systems
 
 * [DragonFly BSD](https://www.dragonflybsd.org)
-* [FreeBSD](https://www.freebsd.org)
+* [FreeBSD](https://www.freebsd.org) → Runs well on VirtualBox
 * [GhostBSD](https://www.ghostbsd.org)
 * [helloSystem](https://github.com/helloSystem/hello)
 * [MidnightBSD](https://www.midnightbsd.org)
-* [NetBSD](https://www.netbsd.org)
+* [NetBSD](https://www.netbsd.org) → Runs well on VirtualBox
 * [NomadBSD](https://nomadbsd.org)
 * [OpenBSD](https://www.openbsd.org)
 
