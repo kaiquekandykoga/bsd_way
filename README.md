@@ -1,8 +1,10 @@
-# BSD Awesome
+# BSD Way
 
-A curated, Awesome-style repository of BSD resources, featuring a personal collection of relevant and practical links for BSD systems.
+A repository of BSD resources, roadmaps, and other relevant materials, curated based on personal research and preferences.
 
 ## Cloud Providers
+
+A list of cloud providers offering BSD systems. Not all providers listed have been personally tested.
 
 * [Hawk Host](https://www.hawkhost.com) → FreeBSD 14 and 13 (verified on 31 March 2026)
 * [Server Space](https://serverspace.io) → FreeBSD 14 (verified on 31 March 2026)
