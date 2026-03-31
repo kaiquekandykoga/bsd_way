@@ -4,8 +4,8 @@ A repository of BSD resources, roadmaps, and other relevant materials, curated b
 
 * [Cloud Providers](#cloud-providers)
 * [Sites](#sites)
-* [Operating Systems](#operating-systems)
-* [YouTube Channels](#youtube-channels)
+* [Operating Systems](#operating-systems) → List of Operating Systems
+* [YouTube Channels](#youtube-channels) → List of YouTube Channels
 
 ## Cloud Providers
 
