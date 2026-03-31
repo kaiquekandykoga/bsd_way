@@ -2,6 +2,9 @@
 
 A repository of BSD resources, roadmaps, and other relevant materials, curated based on personal research and preferences.
 
+* [Cloud Providers](#cloud-providers)
+* [Sites](#sites)
+
 ## Cloud Providers
 
 A list of cloud providers offering BSD systems. Not all providers listed have been personally tested.
