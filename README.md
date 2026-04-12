@@ -1,6 +1,6 @@
 # BSD Way
 
-A repository of BSD resources, roadmaps, and other relevant materials, curated based on personal research and preferences.
+A repository of BSD resources, roadmaps, and other relevant materials, curated based on personal research and preferences
 
 * [Cloud Providers](#cloud-providers)
 * [Sites](#sites)
