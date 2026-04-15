@@ -1,0 +1,16 @@
+.bundle/
+*.gem
+pkg/
+vendor/bundle/
+.yardoc
+doc/
+rdoc/
+coverage/
+tmp/
+log/
+
+*.swp
+*.swo
+*~
+.viminfo
+.netrwhist
