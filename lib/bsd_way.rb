@@ -1,9 +1,12 @@
 require 'yaml'
 require 'pathname'
+require 'json'
+require 'net/http'
 
 module BSDWay
   DATA_DIR = Pathname.new(__dir__).parent.join('data')
   README_PATH = DATA_DIR.parent.join('README.md')
+  OLLAMA_URL = 'http://localhost:11434/api/generate'
 
   def self.start(_args)
     generate
@@ -16,61 +19,53 @@ module BSDWay
   end
 
   private_class_method def self.build_readme
-    <<~MD
-      # BSD Way
+    cloud_providers = YAML.load_file(DATA_DIR.join('cloud_providers.yml'))
+    sites = YAML.load_file(DATA_DIR.join('sites.yml'))
+    operating_systems = YAML.load_file(DATA_DIR.join('operating_systems.yml'))
+    youtube_channels = YAML.load_file(DATA_DIR.join('youtube_channels.yml'))
 
-      A repository of BSD resources, roadmaps, and other relevant materials, curated based on personal research and preferences
+    build_prompt = <<~PROMPT
+      Generate a well-structured README.md for a BSD resources repository.
+      Include a title, brief description, table of contents, and the following sections:
+      - Cloud Providers (with notes about BSD versions and verification dates)
+      - Sites
+      - Operating Systems (with notes about compatibility)
+      - YouTube Channels
 
-      * [Cloud Providers](#cloud-providers)
-      * [Sites](#sites)
-      * [Operating Systems](#operating-systems)
-      * [YouTube Channels](#youtube-channels)
+      Format it nicely with markdown. Use the data below:
 
-      ## Cloud Providers
+      ## Data
 
-      A list of cloud providers offering BSD systems. Not all providers listed have been personally tested.
+      ### Cloud Providers
+      #{cloud_providers.inspect}
 
-      #{cloud_providers_section}
+      ### Sites
+      #{sites.inspect}
 
-      ## Sites
+      ### Operating Systems
+      #{operating_systems.inspect}
 
-      #{sites_section}
+      ### YouTube Channels
+      #{youtube_channels.inspect}
+    PROMPT
 
-      ## Operating Systems
-
-      ThinkPad models are generally an excellent choice for running BSD systems, but I've also had reasonably good success getting FreeBSD working on a Dell laptop
-
-      #{operating_systems_section}
-
-      ## YouTube Channels
-
-      #{youtube_channels_section}
-    MD
+    call_ollama(build_prompt).strip
   end
 
-  private_class_method def self.cloud_providers_section
-    items = YAML.load_file(DATA_DIR.join('cloud_providers.yml'))
-    items.map do |item|
-      notes = item['notes'] ? " → #{item['notes']} (verified on #{item['verified_date']})" : ''
-      "* [#{item['name']}](#{item['url']})#{notes}"
-    end.join("\n")
-  end
+  private_class_method def self.call_ollama(prompt)
+    uri = URI(OLLAMA_URL)
+    request = Net::HTTP::Post.new(uri)
+    request['Content-Type'] = 'application/json'
+    request.body = JSON.generate({
+                                   model: 'llama3.2:3b',
+                                   prompt: prompt,
+                                   stream: false
+                                 })
 
-  private_class_method def self.sites_section
-    items = YAML.load_file(DATA_DIR.join('sites.yml'))
-    items.map { |item| "* [#{item['name']}](#{item['url']})" }.join("\n")
-  end
+    response = Net::HTTP.start(uri.host, uri.port) do |http|
+      http.request(request)
+    end
 
-  private_class_method def self.operating_systems_section
-    items = YAML.load_file(DATA_DIR.join('operating_systems.yml'))
-    items.map do |item|
-      notes = item['notes'] ? " → #{item['notes']}" : ''
-      "* [#{item['name']}](#{item['url']})#{notes}"
-    end.join("\n")
-  end
-
-  private_class_method def self.youtube_channels_section
-    items = YAML.load_file(DATA_DIR.join('youtube_channels.yml'))
-    items.map { |item| "* [#{item['name']}](#{item['url']})" }.join("\n")
+    JSON.parse(response.body)['response']
   end
 end
