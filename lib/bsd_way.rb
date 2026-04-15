@@ -16,6 +16,22 @@ module BSDWay
     content = build_readme
     README_PATH.write(content)
     puts "Generated #{README_PATH}"
+
+    commit_and_push
+  end
+
+  private_class_method def self.commit_and_push
+    status = `git status --porcelain`
+    return puts 'No changes to commit' if status.empty?
+
+    system('git add .')
+    system('git commit -m "Auto-generate README.md (AI-generated)"')
+
+    if system('git push')
+      puts 'Pushed to remote'
+    else
+      puts 'Warning: Push failed or no remote configured'
+    end
   end
 
   private_class_method def self.build_readme
