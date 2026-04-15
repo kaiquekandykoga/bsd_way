@@ -1,15 +1,25 @@
 # AGENTS.md
 
-This is a static documentation repository containing curated BSD resources (cloud providers, operating systems, sites, YouTube channels). No build, test, or lint commands.
+## Running the tool
 
-## Repository Structure
+```bash
+bundle exec bin/bsd_way
+```
 
-- `README.md` - Main content with resource lists
-- `.github/workflows/opencode.yml` - GitHub workflow enabling OpenCode via `/oc` or `/opencode` commands
+Requires:
+- Ruby with bundler
+- **Ollama running locally** with `llama3.2:3b` model loaded
+- The tool connects to `http://localhost:11434/api/generate`
 
-## Notes for Agents
+## Behavior
 
-- No code to write or modify - this is a reference/curation repo
-- No package manager, no dependencies
-- Changes would be markdown edits only
-- License is ISC (see LICENSE file)
+`bin/bsd_way` regenerates `README.md` from YAML data files, auto-commits, and pushes to remote.
+
+## Data files
+
+- `data/cloud_providers.yml`
+- `data/sites.yml`
+- `data/operating_systems.yml`
+- `data/youtube_channels.yml`
+
+Each entry has `name`, `url`, and optional `notes`/`verified_date` fields.
