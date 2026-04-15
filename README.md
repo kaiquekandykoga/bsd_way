@@ -2,20 +2,17 @@
 
 ## BSD Resources Repository
 
-A collection of resources for learning and using BSD-based operating systems.
+This repository provides a collection of resources for users interested in BSD operating systems.
 
 ### Table of Contents
+- [Cloud Providers](#cloud-providers)
+- [Sites](#sites)
+- [Operating Systems](#operating-systems)
+- [YouTube Channels](#youtube-channels)
 
-* [Cloud Providers](#cloud-providers)
-  * [Verification Dates](#verification-dates)
-* [Sites](#sites)
-* [Operating Systems](#operating-systems)
-  * [Notes on Compatibility](#notes-on-compatibility)
-* [YouTube Channels](#youtube-channels)
+### Cloud Providers
 
-## Cloud Providers
-
-BSD-based operating systems are available on various cloud providers. Please note that the listed BSD versions and verification dates may change over time.
+BSD is supported on various cloud providers. Here are some examples:
 
 | Provider | URL | Notes | Verified Date |
 | --- | --- | --- | --- |
@@ -24,29 +21,37 @@ BSD-based operating systems are available on various cloud providers. Please not
 | Server Space | https://serverspace.io | FreeBSD 14 | March 31, 2026 |
 | Vultr | https://www.vultr.com | FreeBSD 15, 14, and 13, as well as OpenBSD 7.8 and 7.7 | March 31, 2026 |
 
-## Sites
+### Sites
 
-* [vermaden](https://vermaden.wordpress.com)
+Here are some sites that offer BSD resources:
 
-## Operating Systems
+| Name | URL |
+| --- | --- |
+| vermaden | https://vermaden.wordpress.com |
 
-A list of BSD-based operating systems with notes on compatibility.
+### Operating Systems
+
+Some popular BSD operating systems include:
 
 | Name | URL | Notes |
 | --- | --- | --- |
-| DragonFly BSD | https://www.dragonflybsd.org | A fast and efficient operating system. |
-| FreeBSD | https://www.freebsd.org | Runs smoothly on VirtualBox and is beginner-friendly. |
-| GhostBSD | https://www.ghostbsd.org | A user-friendly interface for beginners. |
-| helloSystem | https://github.com/helloSystem/hello | A lightweight, beginner-friendly operating system. |
-| MidnightBSD | https://www.midnightbsd.org | A stable and secure operating system with a strong focus on security. |
-| NetBSD | https://www.netbsd.org | Runs smoothly on VirtualBox and is beginner-friendly. |
-| NomadBSD | https://nomadbsd.org | A portable, flexible operating system for use on small devices. |
-| OpenBSD | https://www.openbsd.org | Tends to run slowly on VirtualBox; however, it remains beginner-friendly. |
+| DragonFly BSD | https://www.dragonflybsd.org | |
+| FreeBSD | https://www.freebsd.org | Runs smoothly on VirtualBox and is beginner-friendly |
+| GhostBSD | https://www.ghostbsd.org | |
+| helloSystem | https://github.com/helloSystem/hello | |
+| MidnightBSD | https://www.midnightbsd.org | |
+| NetBSD | https://www.netbsd.org | Runs smoothly on VirtualBox and is beginner-friendly |
+| NomadBSD | https://nomadbsd.org | |
+| OpenBSD | https://www.openbsd.org | Tends to run slowly on VirtualBox; however, it remains beginner-friendly |
 
-## YouTube Channels
+### YouTube Channels
 
-A list of YouTube channels featuring BSD-based content.
+Here are some YouTube channels that offer BSD-related content:
 
-* [GaryH Tech](https://www.youtube.com/@GaryHTech)
-* [RoboNuggie](https://www.youtube.com/@RoboNuggie)
-* [The OpenBSD guy](https://www.youtube.com/@TheOpenBSDguy)
+| Name | URL |
+| --- | --- |
+| GaryH Tech | https://www.youtube.com/@GaryHTech |
+| RoboNuggie | https://www.youtube.com/@RoboNuggie |
+| The OpenBSD guy | https://www.youtube.com/@TheOpenBSDguy |
+
+Note: The verified date for each cloud provider is March 31, 2026. Please check the providers' websites for any updates or changes since then.
