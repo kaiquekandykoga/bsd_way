@@ -78,12 +78,12 @@ module BSDWay
     request = Net::HTTP::Post.new(uri)
     request['Content-Type'] = 'application/json'
     request.body = JSON.generate({
-                                   model: 'llama3.2:3b',
+                                   model: 'phi4:14b',
                                    prompt: prompt,
                                    stream: false
                                  })
 
-    response = Net::HTTP.start(uri.host, uri.port) do |http|
+    response = Net::HTTP.start(uri.host, uri.port, read_timeout: 600) do |http|
       http.request(request)
     end
 
