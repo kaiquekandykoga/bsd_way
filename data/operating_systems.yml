@@ -1,0 +1,19 @@
+- name: DragonFly BSD
+  url: https://www.dragonflybsd.org
+- name: FreeBSD
+  url: https://www.freebsd.org
+  notes: Runs smoothly on VirtualBox and is beginner‑friendly
+- name: GhostBSD
+  url: https://www.ghostbsd.org
+- name: helloSystem
+  url: https://github.com/helloSystem/hello
+- name: MidnightBSD
+  url: https://www.midnightbsd.org
+- name: NetBSD
+  url: https://www.netbsd.org
+  notes: Runs smoothly on VirtualBox and is beginner‑friendly
+- name: NomadBSD
+  url: https://nomadbsd.org
+- name: OpenBSD
+  url: https://www.openbsd.org
+  notes: Tends to run slowly on VirtualBox; however, it remains beginner-friendly

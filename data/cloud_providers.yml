@@ -1,0 +1,16 @@
+- name: AWS Lightsail
+  url: https://aws.amazon.com/lightsail
+  notes: FreeBSD 15.0, 14.3, and 13.5
+  verified_date: 31 March 2026
+- name: Hawk Host
+  url: https://www.hawkhost.com
+  notes: FreeBSD 14 and 13
+  verified_date: 31 March 2026
+- name: Server Space
+  url: https://serverspace.io
+  notes: FreeBSD 14
+  verified_date: 31 March 2026
+- name: Vultr
+  url: https://www.vultr.com
+  notes: FreeBSD 15, 14, and 13, as well as OpenBSD 7.8 and 7.7
+  verified_date: 31 March 2026
