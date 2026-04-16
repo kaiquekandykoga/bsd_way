@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'pathname'
 require 'json'
@@ -76,10 +78,10 @@ module BSDWay
     request = Net::HTTP::Post.new(uri)
     request['Content-Type'] = 'application/json'
     request.body = JSON.generate({
-      model:  OLLAMA_MODEL,
-      prompt: prompt,
-      stream: false
-    })
+                                   model: OLLAMA_MODEL,
+                                   prompt: prompt,
+                                   stream: false
+                                 })
 
     response = Net::HTTP.start(uri.host, uri.port, read_timeout: 600) do |http|
       http.request(request)
