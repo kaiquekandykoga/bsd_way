@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'yaml'
-require 'pathname'
-require 'json'
-require 'net/http'
+require "yaml"
+require "pathname"
+require "json"
+require "net/http"
 
 module BSDWay
-  DATA_DIR    = Pathname.new(__dir__).parent.join('data')
-  README_PATH = DATA_DIR.parent.join('README.md')
+  DATA_DIR    = Pathname.new(__dir__).parent.join("data")
+  README_PATH = DATA_DIR.parent.join("README.md")
 
-  OLLAMA_URL   = 'http://localhost:11434/api/generate'
-  OLLAMA_MODEL = 'phi4:14b'
+  OLLAMA_URL   = "http://localhost:11434/api/generate"
+  OLLAMA_MODEL = "phi4:14b"
 
-  PROVIDER_LABEL = 'Ollama (local)'
+  PROVIDER_LABEL = "Ollama (local)"
 
   def self.start(_args)
     generate
@@ -25,10 +25,10 @@ module BSDWay
   end
 
   private_class_method def self.build_readme
-    cloud_providers   = YAML.load_file(DATA_DIR.join('cloud_providers.yml'))
-    sites             = YAML.load_file(DATA_DIR.join('sites.yml'))
-    operating_systems = YAML.load_file(DATA_DIR.join('operating_systems.yml'))
-    youtube_channels  = YAML.load_file(DATA_DIR.join('youtube_channels.yml'))
+    cloud_providers   = YAML.load_file(DATA_DIR.join("cloud_providers.yml"))
+    sites             = YAML.load_file(DATA_DIR.join("sites.yml"))
+    operating_systems = YAML.load_file(DATA_DIR.join("operating_systems.yml"))
+    youtube_channels  = YAML.load_file(DATA_DIR.join("youtube_channels.yml"))
 
     prompt = <<~PROMPT
       Generate a well-structured README.md for a BSD resources repository.
@@ -67,8 +67,8 @@ module BSDWay
   end
 
   private_class_method def self.strip_fences(text)
-    text = text.sub(/\A```(?:markdown)?\n/, '')
-    text = text.sub(/```.*\z/m, '')
+    text = text.sub(/\A```(?:markdown)?\n/, "")
+    text = text.sub(/```.*\z/m, "")
     text.strip
   end
 
@@ -76,7 +76,7 @@ module BSDWay
     uri = URI(OLLAMA_URL)
 
     request = Net::HTTP::Post.new(uri)
-    request['Content-Type'] = 'application/json'
+    request["Content-Type"] = "application/json"
     request.body = JSON.generate({
                                    model: OLLAMA_MODEL,
                                    prompt: prompt,
@@ -88,8 +88,8 @@ module BSDWay
     end
 
     body = JSON.parse(response.body)
-    raise "Ollama error: #{body['error']}" if body['error']
+    raise "Ollama error: #{body['error']}" if body["error"]
 
-    body['response']
+    body["response"]
   end
 end
